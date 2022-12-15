@@ -23,16 +23,17 @@ const markup = images
   )
   .join("");
 
-console.log(markup);
-
-gallery.insertAdjacentHTML("beforeend", markup);
+gallery.insertAdjacentHTML("afterbegin", markup);
 
 gallery.style.display = "flex";
-gallery.style.flexWrap = "wrap";
-gallery.style.gap = "10px";
+
+gallery.style.gap = "20px";
 gallery.style.padding = "0";
+gallery.style.listStyle = "none";
 
-const image = document.querySelector(".image");
+const imageItems = document.querySelectorAll(".image");
+console.log(imageItems);
 
-image.style.flexBasis = "calc((100% - 20px) / 3)";
-image.style.padding = "10px";
+imageItems.forEach((image) => {
+  image.style.width = "100%";
+});
